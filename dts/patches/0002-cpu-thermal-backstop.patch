@@ -1,0 +1,201 @@
+--- a/dts/mt6897.dts
++++ b/dts/mt6897.dts
+@@ -147,6 +147,7 @@
+ 			enable-method = "psci";
+ 			cpu-idle-states = <0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a>;
+ 			capacity-dmips-mhz = <0x152>;
++			#cooling-cells = <0x02>;
+ 			phandle = <0x11>;
+ 		};
+ 
+@@ -191,6 +192,7 @@
+ 			enable-method = "psci";
+ 			cpu-idle-states = <0x0b 0x0c 0x0d 0x06 0x07 0x08 0x09 0x0a>;
+ 			capacity-dmips-mhz = <0x438>;
++			#cooling-cells = <0x02>;
+ 			phandle = <0x15>;
+ 		};
+ 
+@@ -224,6 +226,7 @@
+ 			enable-method = "psci";
+ 			cpu-idle-states = <0x0e 0x0f 0x10 0x06 0x07 0x08 0x09 0x0a>;
+ 			capacity-dmips-mhz = <0x400>;
++			#cooling-cells = <0x02>;
+ 			phandle = <0x18>;
+ 		};
+ 
+@@ -2917,11 +2920,18 @@
+ 
+ 		cpu-medium-core4-1 {
+ 			polling-delay = <0x00>;
+-			polling-delay-passive = <0x00>;
++			polling-delay-passive = <0x3e8>;
+ 			thermal-sensors = <0x85 0x01>;
+ 
+ 			trips {
+ 
++				cpu-medium-core4-1-throttle {
++					temperature = <0x186a0>;
++					hysteresis = <0x1388>;
++					type = "passive";
++					phandle = <0x387>;
++				};
++
+ 				cpu_medium_core4_1_crit: cpu-medium-core4-1-crit {
+ 					temperature = <0x1d0d8>;
+ 					hysteresis = <0x7d0>;
+@@ -2929,6 +2939,14 @@
+ 					phandle = <0x20c>;
+ 				};
+ 			};
++
++			cooling-maps {
++
++				map0 {
++					trip = <0x387>;
++					cooling-device = <0x15 0xffffffff 0xffffffff>;
++				};
++			};
+ 		};
+ 
+ 		cpu-medium-core4-2 {
+@@ -2949,11 +2967,18 @@
+ 
+ 		cpu-medium-core5-1 {
+ 			polling-delay = <0x00>;
+-			polling-delay-passive = <0x00>;
++			polling-delay-passive = <0x3e8>;
+ 			thermal-sensors = <0x85 0x03>;
+ 
+ 			trips {
+ 
++				cpu-medium-core5-1-throttle {
++					temperature = <0x186a0>;
++					hysteresis = <0x1388>;
++					type = "passive";
++					phandle = <0x388>;
++				};
++
+ 				cpu_medium_core5_1_crit: cpu-medium-core5-1-crit {
+ 					temperature = <0x1d0d8>;
+ 					hysteresis = <0x7d0>;
+@@ -2961,6 +2986,14 @@
+ 					phandle = <0x20e>;
+ 				};
+ 			};
++
++			cooling-maps {
++
++				map0 {
++					trip = <0x388>;
++					cooling-device = <0x15 0xffffffff 0xffffffff>;
++				};
++			};
+ 		};
+ 
+ 		cpu-medium-core5-2 {
+@@ -3013,11 +3046,18 @@
+ 
+ 		cpu-medium-core6-1 {
+ 			polling-delay = <0x00>;
+-			polling-delay-passive = <0x00>;
++			polling-delay-passive = <0x3e8>;
+ 			thermal-sensors = <0x85 0x07>;
+ 
+ 			trips {
+ 
++				cpu-medium-core6-1-throttle {
++					temperature = <0x186a0>;
++					hysteresis = <0x1388>;
++					type = "passive";
++					phandle = <0x389>;
++				};
++
+ 				cpu_medium_core6_1_crit: cpu-medium-core6-1-crit {
+ 					temperature = <0x1d0d8>;
+ 					hysteresis = <0x7d0>;
+@@ -3025,6 +3065,14 @@
+ 					phandle = <0x212>;
+ 				};
+ 			};
++
++			cooling-maps {
++
++				map0 {
++					trip = <0x389>;
++					cooling-device = <0x15 0xffffffff 0xffffffff>;
++				};
++			};
+ 		};
+ 
+ 		cpu-medium-core6-2 {
+@@ -3061,11 +3109,18 @@
+ 
+ 		cpu-little-core0 {
+ 			polling-delay = <0x00>;
+-			polling-delay-passive = <0x00>;
++			polling-delay-passive = <0x3e8>;
+ 			thermal-sensors = <0x85 0x0a>;
+ 
+ 			trips {
+ 
++				cpu-little-core0-throttle {
++					temperature = <0x186a0>;
++					hysteresis = <0x1388>;
++					type = "passive";
++					phandle = <0x386>;
++				};
++
+ 				cpu_little_core0_crit: cpu-little-core0-crit {
+ 					temperature = <0x1d0d8>;
+ 					hysteresis = <0x7d0>;
+@@ -3073,6 +3128,14 @@
+ 					phandle = <0x215>;
+ 				};
+ 			};
++
++			cooling-maps {
++
++				map0 {
++					trip = <0x386>;
++					cooling-device = <0x11 0xffffffff 0xffffffff>;
++				};
++			};
+ 		};
+ 
+ 		cpu-little-core1 {
+@@ -3109,11 +3172,18 @@
+ 
+ 		cpu-big-core7-1 {
+ 			polling-delay = <0x00>;
+-			polling-delay-passive = <0x00>;
++			polling-delay-passive = <0x3e8>;
+ 			thermal-sensors = <0x85 0x0d>;
+ 
+ 			trips {
+ 
++				cpu-big-core7-1-throttle {
++					temperature = <0x186a0>;
++					hysteresis = <0x1388>;
++					type = "passive";
++					phandle = <0x38a>;
++				};
++
+ 				cpu_big_core7_1_crit: cpu-big-core7-1-crit {
+ 					temperature = <0x1d0d8>;
+ 					hysteresis = <0x7d0>;
+@@ -3121,6 +3191,14 @@
+ 					phandle = <0x218>;
+ 				};
+ 			};
++
++			cooling-maps {
++
++				map0 {
++					trip = <0x38a>;
++					cooling-device = <0x18 0xffffffff 0xffffffff>;
++				};
++			};
+ 		};
+ 
+ 		cpu-big-core7-2 {
