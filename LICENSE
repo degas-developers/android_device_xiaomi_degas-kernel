@@ -1,3 +1,21 @@
+The Linux kernel, its loadable modules and the device tree in this repository
+are licensed under the GNU General Public License, version 2, the full text of
+which follows.
+
+Copyright is held by Linus Torvalds and the Linux kernel contributors, MediaTek
+Inc., Xiaomi Inc. and Google LLC. None of that code was written here.
+
+The only original work in this repository is two changes to the device tree,
+provided in source form in dts/ - Copyright 2026 Mikhail Mlhcnn, contributed
+under this same license.
+
+Because nothing here is a new program of ours, the appendix at the end of the
+license ("How to Apply These Terms to Your New Programs") is left exactly as
+the license writes it: the "yyyy name of author" placeholder there belongs to
+the template, and filling it in would assert authorship of the kernel.
+
+================================================================================
+
 GNU GENERAL PUBLIC LICENSE
 Version 2, June 1991
 
